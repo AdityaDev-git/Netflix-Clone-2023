@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto','Ubuntu', sans-serif;
+    background: #000000;
+}
+
+.divider{
+    width: 100%;
+    height: 0.5rem;
+    bottom: -0.5rem;
+    background-color: rgb(35,35,35);
+}
+/* sections  */
+section{
+    --max-width: 1200px;
+    --pading: 2rem;
+    width: min(var(--max-width),100% - var(--pading));
+    margin-inline: auto;
+    padding-block: 4rem;   
+}
+.even-col{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+section h1 , .hero h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+section p, .hero p{
+    font-size: 1.1255rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+}
+    @media (min-width:960px)
+    {
+        .even-col{
+        /* grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); */
+        grid-template-columns: repeat(2, 1fr);
+
+        }
+        section h1 , .hero h1{
+            font-size: 3rem;
+            font-weight: 900;
+            text-align: unset;
+        }
+        section p, .hero p{
+            font-size: 1.5rem;
+            text-align: unset;
+        }
+    }
+.media{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-inline: auto;
+    z-index: 2;
+}
+.media img{
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+#media-1 video{
+    z-index: -1;
+    position: absolute;
+    top: 90px;    
+    left: 77px;
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    max-width: 73%;
+    max-height: 55%;
+}
+#media-2 video{
+    z-index: -1;
+    position: absolute;
+    top: 30px;    
+    left: 120px;
+    object-fit: contain;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    max-width: 73%;
+    max-height: 47%;
+}
+    @media (max-width:480px) {
+        #media-1 video{
+            top: 60px;    
+            left: 50px;
+        }
+        
+        #media-2 video{
+            top: 20px;    
+            left: 80px;
+            max-width: 73%;
+            max-height: 40%;
+        }
+    }
+
+/* nav  */
+nav{
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.nav-wraper{
+    --max-width: 1200px;
+    --pading: 2rem;
+    width: min(var(--max-width),100% - var(--pading));
+    margin-inline: auto;
+}
+
+.logo{
+    width: 100px;
+}
+.logo img{
+    width: 100%;
+}
+    @media (min-width:801px) {
+            .logo{
+                width: 160px;
+            }
+        }
+
+.nav-wraper select{
+    margin-left: auto;
+    border: 1px light white;
+    background-color: transparent;
+    color: white;
+    padding: 0.3em 1em;
+    border-radius: 5px;
+}
+.nav-wraper button{
+    margin-left: 1rem;
+    background-color: #C11119;
+    color: white;
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    border-width: 0;
+    font-weight: 500;
+}
+
+
+/* hero  */
+.hero{
+    height: auto;
+    background: url(/images/hero.jpg) center;
+    background-repeat: no-repeat;
+}
+.hero-inner{
+    background: rgb(0 0 0 / 40%);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
+    height: 100%;
+    width: 100%;
+    color: white;
+    z-index: 1;
+}
+.hero-wraper{
+    padding-block: 8rem 3rem;
+    padding-inline: 2rem;
+    text-align: center;
+}
+    @media (min-width:835px) {
+        .hero{
+            height: 100vh;
+        }
+        .hero-wraper{
+            padding: 4rem 3rem;
+            }
+        }
+.email{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.email input{
+    background: rgb(0 0 0 / 40%);
+    color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+    border-color: rgb(153, 153, 153);
+    padding: 1em;
+    flex-grow: 1;
+}
+.email input::placeholder{
+    color: white;
+    opacity: 1;
+}
+.email button{
+    background-color: #C11119;
+    color: white;
+    padding: 0.5em 1em;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-width: 0;
+    border-radius: 5px;
+}
+    @media (min-width:50em) {
+        .email input{
+            flex-basis: 500px;
+            flex-grow: 0;
+        }
+    }
+    @media (max-width:799px) {
+        .email input{
+            padding: 0.6em;
+        }
+        .email button{
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+    }
